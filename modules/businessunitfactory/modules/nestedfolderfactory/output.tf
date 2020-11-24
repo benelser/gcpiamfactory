@@ -1,7 +1,7 @@
-output child_folders {
+output component {
     value = google_folder.child_folder
 }
 
-output child_nested_folders {
+output enviornments {
     value = google_folder.child_nested_folder
 }

@@ -1,14 +1,15 @@
-module rootfolderfactory {
-    source = "../rootfolderfactory"
+module "rootfolderfactory" {
+    source = "./modules/rootfolderfactory"
     org_domain = var.org_domain
     name = var.name
 }
 
-module nestedfolderfactory {
+module "nestedfolderfactory" {
     count = length(var.products)
     name = var.products[count.index]
     childfoldername = var.enviornments
-    source = "../nestedfolderfactory"
+    source = "./modules/nestedfolderfactory"
     org_domain = var.org_domain
     parent = module.rootfolderfactory.root_folder.name
 }
+
