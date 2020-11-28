@@ -1,3 +1,4 @@
+# Gets all files in iamcustomroles directory and decodes the json to pass through to the iam generator
 locals {
   custom_roles  = fileset(var.path_to_custom_roles, "*")
 }
