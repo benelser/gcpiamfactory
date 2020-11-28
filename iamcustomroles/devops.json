@@ -1,0 +1,16 @@
+{
+    "role_id" : "DevOps",
+    "title" : "Custom DevOps Role",
+    "description" : "Role for DevOps Dudes",
+    "predefined_roles" : [
+        "roles/compute.instanceAdmin",
+        "roles/bigquery.jobUser"
+    ],
+    "additional_permissions" : [
+        "serviceusage.quotas.get"
+    ],
+    "excluded_permissions" : [
+        "compute.firewalls.create", 
+        "compute.firewalls.delete"
+    ]
+}

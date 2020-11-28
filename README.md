@@ -11,3 +11,21 @@ An organizations security team's maturity is graded in part by their ability to 
 - Incorporate/implement project factory 
 - Incorporate/implement IAM factory 
 - Incorporate/implement Org security policy 
+
+## Relevant Things to Note
+- A folder holding a project that is created outside of terraform will not be destroyed
+- Resources are the things that projects are made of 
+- Terraform by itself is not a security tool (only when used in conjunction with operational controls)
+- The methodology of creating an entire organizational structure with base projects is great from a security stand point. This would require further secuirty controls in place to fully leverage the assurance that the reality is what the master terrafrom state managing those projects states. For example: A org that uses the method suggested in this repo would need to implement org wide controls only allowing a terraform service account to add projects outside orginial declaration. This is needed because terraform has no way of detecting drift of resources created outside of its configuration. 
+- Key questiond that need answered in order to operationalize would be:
+    1. Who needs to create projects?
+    2. What scenerio would present this approach too rigid and not beneficial?
+- Benefits of this approach
+    1. Security is baked into project creation/kick-off
+        - IAM
+        - API's enabled 
+        - Central management of project creation 
+        - Confidence/assurance in 
+    2. Single source of truth of projects IAM bindings and enabled API's
+
+

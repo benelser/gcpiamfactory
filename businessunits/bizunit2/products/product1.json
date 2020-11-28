@@ -1,0 +1,15 @@
+{
+    "name" : "product1",
+    "enviornments" : ["dev", "qa", "prod", "rnd"],
+    "labels" : {
+      "1" : "one",
+      "2" : "two"
+    },
+    "activate_apis" : [
+    "secretmanager.googleapis.com",
+    "cloudkms.googleapis.com",
+    "securitycenter.googleapis.com"
+    ],
+    "billing_account" : "01AFF7-B4D34B-DA73ED",
+    "delete_default_service_account" : true
+}

@@ -1,41 +1,43 @@
 provider "google" {
-    
+
 }
+
+###############################################################################
+#                                Custom Roles                                 #
+###############################################################################
+
+
+module "custom_role" {
+  source      = "./modules/iamcustomrolefactory"
+  org_domain      = var.org_domain
+  path_to_custom_roles = "${path.root}/iamcustomroles"
+}
+
 
 ###############################################################################
 #                                Business units                               #
 ###############################################################################
 
-locals {
-  biz_products = ["supercoolproduct", "anothercoolsupportproduct", "andyetanother"]
-  enviornments = ["dev", "qa", "prod", "rnd"] 
-}
+# module "bizunit1" {
+#   source     = "./modules/businessunitfactory"
+#   org_domain = var.org_domain
+#   business_unit = {
+#     name = "buzunit1",
+#     products = [
+#       jsondecode(file("${path.module}/businessunits/bizunit1/products/product1.json")),
+#       jsondecode(file("${path.module}/businessunits/bizunit1/products/product2.json"))
+#     ]
+#   }
+# }
 
-module "SuperSecretProject" {
-    source = "./modules/businessunitfactory"
-    org_domain = var.org_domain
-    name = "SuperSecretProject"
-    enviornments = local.enviornments
-    products = local.biz_products
-}
-
-module "NotSoImportantProject" {
-    source = "./modules/businessunitfactory"
-    org_domain = var.org_domain
-    name = "NotSoImportantProject"
-    enviornments = local.enviornments
-    products = local.biz_products
-}
-
-# These all will have attributes after apply
-output "product-components" {
-  value = module.SuperSecretProject.product.components
-}
-
-output "product-enviornments" {
-  value = module.SuperSecretProject.product.components[0].enviornments
-}
-
-output "specific-product-component-enviornment" {
-  value = module.SuperSecretProject.product.components[0].enviornments["dev"]
-}
+# module "bizunit2" {
+#   source     = "./modules/businessunitfactory"
+#   org_domain = var.org_domain
+#   business_unit = {
+#     name = "bizunit2",
+#     products = [
+#       jsondecode(file("${path.module}/businessunits/bizunit2/products/product1.json")),
+#       jsondecode(file("${path.module}/businessunits/bizunit2/products/product2.json"))
+#     ]
+#   }
+# }

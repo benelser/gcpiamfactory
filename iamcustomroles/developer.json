@@ -1,0 +1,16 @@
+{
+    "role_id" : "Developer",
+    "title" : "Custom Developer Role",
+    "description" : "Role for Developers",
+    "predefined_roles" : [
+        "roles/compute.instanceAdmin",
+        "roles/bigquery.jobUser"
+    ],
+    "additional_permissions" : [
+        "serviceusage.quotas.get"
+    ],
+    "excluded_permissions" : [
+        "compute.firewalls.create", 
+        "compute.firewalls.delete"
+    ]
+}
