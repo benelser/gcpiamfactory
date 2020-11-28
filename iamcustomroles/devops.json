@@ -1,10 +1,9 @@
 {
-    "role_id" : "DevOps",
-    "title" : "Custom DevOps Role",
-    "description" : "Role for DevOps Dudes",
+    "role_id" : "devops",
+    "title" : "custom devops role",
+    "description" : "role for devops dudes",
     "predefined_roles" : [
-        "roles/compute.instanceAdmin",
-        "roles/bigquery.jobUser"
+        "roles/compute.instanceAdmin"
     ],
     "additional_permissions" : [
         "serviceusage.quotas.get"

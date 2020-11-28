@@ -1,10 +1,9 @@
 {
-    "role_id" : "Developer",
-    "title" : "Custom Developer Role",
-    "description" : "Role for Developers",
+    "role_id" : "developer",
+    "title" : "custom dev role",
+    "description" : "role for devs",
     "predefined_roles" : [
-        "roles/compute.instanceAdmin",
-        "roles/bigquery.jobUser"
+        "roles/compute.instanceAdmin"
     ],
     "additional_permissions" : [
         "serviceusage.quotas.get"

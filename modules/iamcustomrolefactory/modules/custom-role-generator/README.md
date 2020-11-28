@@ -1,4 +1,11 @@
 # Google Cloud Custom IAM Role Generator
+
+# Gotchas
+[google_project_iam_custom_role resource doc](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_project_iam_custom_role)
+Warning:
+Note that custom roles in GCP have the concept of a soft-delete. There are two issues that may arise from this and how roles are propagated. 1) creating a role may involve undeleting and then updating a role with the same name, possibly causing confusing behavior between undelete and update. 2) A deleted role is permanently deleted after 7 days, but it can take up to 30 more days (i.e. between 7 and 37 days after deletion) before the role name is made available again. This means a deleted role that has been deleted for more than 7 days cannot be changed at all by Terraform, and new roles cannot share that name.
+
+
 Helper module to generate an organization-level [custom IAM role](https://cloud.google.com/iam/docs/creating-custom-roles) based on predefined role and permissions inputs.
 
 Currently, to compose a custom role, you must manually select individual permissions. This module allows users create a custom role based on predefined roles, which are regularly maintained by Google product teams.

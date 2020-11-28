@@ -1,9 +1,9 @@
-variable org_domain {
+variable "org_id" {
   type        = string
-  description = "Organization domain name to create"
+  description = "Organization to create custom role"
 }
 
-variable custom_role {
+variable "custom_role" {
   type = object({
     role_id = string
     title = string

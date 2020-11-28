@@ -6,7 +6,6 @@ provider "google" {
 #                                Custom Roles                                 #
 ###############################################################################
 
-
 module "custom_role" {
   source      = "./modules/iamcustomrolefactory"
   org_domain      = var.org_domain
@@ -24,8 +23,8 @@ module "custom_role" {
 #   business_unit = {
 #     name = "buzunit1",
 #     products = [
-#       jsondecode(file("${path.module}/businessunits/bizunit1/products/product1.json")),
-#       jsondecode(file("${path.module}/businessunits/bizunit1/products/product2.json"))
+#       jsondecode(file("${path.module}/businessunits/bizunit1/products/product1.json"))
+#       #jsondecode(file("${path.module}/businessunits/bizunit1/products/product2.json"))
 #     ]
 #   }
 # }

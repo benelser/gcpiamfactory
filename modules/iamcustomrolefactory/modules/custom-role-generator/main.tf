@@ -12,7 +12,7 @@ locals {
 }
 
 resource "google_organization_iam_custom_role" "custom_role" {
-  org_id      = var.org_domain
+  org_id      = var.org_id
   role_id     = var.custom_role.role_id
   title       = var.custom_role.title
   description = var.custom_role.description
