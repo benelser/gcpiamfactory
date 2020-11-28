@@ -8,8 +8,11 @@ An organizations security team's maturity is graded in part by their ability to 
 ![Resource Hierarchy](./content/resource_hierarchy.png)
 
 ## To do
-- Incorporate/implement project factory 
-- Incorporate/implement IAM factory 
+- Validate project provision
+    - api's enabled
+    - Billing enabled
+    - etc.
+- Design best method to bind new custom roles to projects
 - Incorporate/implement Org security policy 
 
 ## Relevant Things to Note
