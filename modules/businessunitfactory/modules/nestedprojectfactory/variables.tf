@@ -22,10 +22,15 @@ variable product {
   type = object({
     name  = string
     enviornments = list(string)
-    labels = object({})
+    labels = map(string)
     activate_apis = list(string)
     billing_account = string
-    delete_default_service_account = bool
+    default_service_account = string
+    iam_bindings = list(object({
+        enviornment = string
+        role = string
+        members = list(string)
+      }))
   })
   description = "Product specific configurations that translate to project level configurations"
 }

@@ -8,12 +8,8 @@ An organizations security team's maturity is graded in part by their ability to 
 ![Resource Hierarchy](./content/resource_hierarchy.png)
 
 ## To do
-- Validate project provision
-    - api's enabled
-    - Billing enabled
-    - etc.
-- Design best method to bind new custom roles to projects
 - Incorporate/implement Org security policy 
+- Implement CIS Benchmarks where possible
 
 ## Relevant Things to Note
 - A folder holding a project that is created outside of terraform will not be destroyed

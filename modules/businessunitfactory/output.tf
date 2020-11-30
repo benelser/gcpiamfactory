@@ -3,9 +3,9 @@ output "product" {
   value = {
     product = var.business_unit.name
     root_folder = module.rootfolderfactory.root_folder
-    components = module.nestedfolderfactory
+    components = module.nestedprojectfactory
   }
 }
 
-# module.nestedfolderfactory[0].google_folder.child_folder
-# module.nestedfolderfactory[0].google_folder.child_nested_folder["dev"] 
+# module.nestedprojectfactory[0].google_folder.child_folder
+# module.nestedprojectfactory[0].google_folder.child_nested_folder["dev"] 

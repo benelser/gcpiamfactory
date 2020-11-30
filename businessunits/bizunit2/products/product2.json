@@ -1,9 +1,9 @@
 {
     "name" : "product2",
-    "enviornments" : ["dev", "qa", "prod", "rnd"],
+    "enviornments" : ["dev", "prod"],
     "labels" : {
-      "1" : "one",
-      "2" : "two"
+      "creator" : "one",
+      "cost-center" : "two"
     },
     "activate_apis" : [
     "secretmanager.googleapis.com",
@@ -11,5 +11,21 @@
     "securitycenter.googleapis.com"
     ],
     "billing_account" : "01AFF7-B4D34B-DA73ED",
-    "delete_default_service_account" : true
+    "default_service_account" : "delete",
+    "iam_bindings" : [
+      {
+        "enviornment" : "dev",
+        "role" : "organizations/695029235726/roles/developer",
+        "members" : [
+          "user:belser@elsersmusings.com"
+        ]
+      },
+      {
+        "enviornment" : "prod",
+        "role" : "organizations/695029235726/roles/developer",
+        "members" : [
+          "user:belser@elsersmusings.com"
+        ]
+      }
+    ]
 }
