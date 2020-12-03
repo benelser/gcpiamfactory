@@ -2,40 +2,14 @@ provider "google" {
 
 }
 
-###############################################################################
-#                                Custom Roles                                 #
-###############################################################################
-
-module "custom_role" {
-  source      = "./modules/iamcustomrolefactory"
-  org_domain      = var.org_domain
-  path_to_custom_roles = "${path.root}/iamcustomroles"
+locals {
+  businessunit_iam_definitions = fileset("${path.module}/businessunits", "*")
 }
 
-###############################################################################
-#                                Business units                               #
-###############################################################################
-
-module "bizunit1" {
-  source     = "./modules/businessunitfactory"
+module "bizunits" {
+  for_each    = toset(local.businessunit_iam_definitions[*])
+  source     = "./modules/businessunitiamfactory"
   org_domain = var.org_domain
-  business_unit = {
-    name = "buzunit1",
-    products = [
-      jsondecode(file("${path.module}/businessunits/bizunit1/products/product1.json")),
-      jsondecode(file("${path.module}/businessunits/bizunit1/products/product2.json"))
-    ]
-  }
+  business_unit = jsondecode(file("${path.module}/businessunits/${each.key}"))
+ 
 }
-
-# module "bizunit2" {
-#   source     = "./modules/businessunitfactory"
-#   org_domain = var.org_domain
-#   business_unit = {
-#     name = "bizunit2",
-#     products = [
-#       jsondecode(file("${path.module}/businessunits/bizunit2/products/product1.json")),
-#       jsondecode(file("${path.module}/businessunits/bizunit2/products/product2.json"))
-#     ]
-#   }
-# }

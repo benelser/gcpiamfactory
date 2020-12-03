@@ -1,0 +1,92 @@
+{
+  "name" : "bizunit1",
+  "folder_id" : 47283085061,
+  "bizunit_level1_iam_bindings" : [
+    {
+      "role" : "organizations/695029235726/roles/developer",
+      "members" : [
+        "user:belser@elsersmusings.com"
+      ]
+    }
+  ],
+  "components" : [
+    {
+      "name" : "product1",
+      "folder_id" : 171206242814,
+      "component_level2_iam_bindings" : [
+        {
+          "role" : "organizations/695029235726/roles/developer",
+          "members" : [
+            "user:belser@elsersmusings.com"
+          ]
+        }
+      ],
+      "environment_level3_iam_bindings" : [
+        {
+          "name" : "dev",
+          "folder_id" : 617169147074,
+          "iam_bindings" : [
+            {
+              "role" : "organizations/695029235726/roles/developer",
+              "members" : [
+                "user:belser@elsersmusings.com"
+              ]
+            }
+          ]
+        },
+        {
+          "name" : "prod",
+          "folder_id" : 106068389219,
+          "iam_bindings" : [
+            {
+              "role" : "organizations/695029235726/roles/developer",
+              "members" : [
+                "user:belser@elsersmusings.com"
+              ]
+            }
+          ]
+        }
+        
+      ]
+    },
+    {
+      "name" : "product2",
+      "folder_id" : 797743756224,
+      "component_level2_iam_bindings" : [
+        {
+          "role" : "organizations/695029235726/roles/developer",
+          "members" : [
+            "user:belser@elsersmusings.com"
+          ]
+        }
+      ],
+      "environment_level3_iam_bindings" : [
+        {
+          "name" : "dev",
+          "folder_id" : 685222170701,
+          "iam_bindings" : [
+            {
+              "role" : "organizations/695029235726/roles/developer",
+              "members" : [
+                "user:belser@elsersmusings.com"
+              ]
+            }
+          ]
+        },
+        {
+          "name" : "prod",
+          "folder_id" : 718661213597,
+          "iam_bindings" : [
+            {
+              "role" : "organizations/695029235726/roles/developer",
+              "members" : [
+                "user:belser@elsersmusings.com"
+              ]
+            }
+          ]
+        }
+        
+      ]
+    }
+  ]
+}
