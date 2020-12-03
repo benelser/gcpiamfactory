@@ -33,4 +33,4 @@ variable business_unit {
 ```
 
 ## Resource Hierarchy
-![Resource Hierarchy](./content/resource_hierarchy.png)
+![Resource Hierarchy](./resource_hierarchy.png)
