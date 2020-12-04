@@ -1,7 +1,19 @@
 # iamfactory
-This code makes the assumption you have already deployed a folder structure and after the fact want to map IAM roles to that structure. It also assumes you will logically separate each business unit into its own backend and code will live in separate repos. To fullfil the resource hierarchy pictured below you would have two instantiations of this repo.
+This code makes the assumption you have already deployed a folder structure and after the fact want to map IAM roles to that structure. It also assumes you will logically separate each business unit into its own backend and code will live in separate repos. To fullfil the resource hierarchy pictured below you would have two instantiations of this repo. This design is opinionated and you may otherwise choose to create a directory holding all of your JSON for the entire org and then calling for_each to loop over each JSON file. That implementations main.tf would look something like this:
+```
+locals {
+  businessunit_iam_definitions = fileset("${path.module}/businessunits", "*")
+}
 
-## Repo Structure
+module "bizunit" {
+  for_each    = toset(local.businessunit_iam_definitions[*])
+  source     = "./modules/businessunitiamfactory"
+  org_domain = var.org_domain
+  business_unit = jsondecode(file("${path.module}/businessunits/${each.key}"))
+}
+```
+
+## Repo Structure used to Break up Monolithic Implementation
 ```
 SOURCE CONTROL
 └── MYTEAM

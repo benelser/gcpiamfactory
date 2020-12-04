@@ -2,16 +2,22 @@ provider "google" {
 
 }
 
-## IAM Bindings Creation
+################################################
+#           Configure Backend Here             #
+#                                              #
+################################################
+
+
+# Load up JSON
 locals {
-  businessunit_iam_definitions = fileset("${path.module}/businessunits", "*")
+  bizunit_json = file("${path.module}/bizunit.json")
 }
 
+## Create some IAM Bindings
 module "bizunit" {
-  for_each    = toset(local.businessunit_iam_definitions[*])
   # In production this source needs to reference a version of businessunitiamfactory source control URI
   source     = "./modules/businessunitiamfactory"
   org_domain = var.org_domain
-  business_unit = jsondecode(file("${path.module}/businessunits/${each.key}"))
+  business_unit = jsondecode(local.bizunit_json) # Serialize our json to terraform object
  
 }
