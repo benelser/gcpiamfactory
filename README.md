@@ -17,7 +17,7 @@ In production each bizunit<ArbitraryNumber>_repo should reference back to "busin
 ├── README.md
 ├── bizunit.json
 ├── data.tf
-├── main.tf
+├── main.tf -- Imports some version of businessunitiamfactory from source control ---
 ├── modules
 │   └── businessunitiamfactory --- Imported via (source = URI) inside ./main.tf for respective biz unit ---
 │       ├── data.tf
