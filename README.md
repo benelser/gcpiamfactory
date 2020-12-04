@@ -19,7 +19,7 @@ In production each bizunit<ArbitraryNumber>_repo should reference back to "busin
 ├── data.tf
 ├── main.tf
 ├── modules
-│   └── businessunitiamfactory
+│   └── businessunitiamfactory --- Imported via (source = URI) inside ./main.tf for respective biz unit ---
 │       ├── data.tf
 │       ├── main.tf
 │       ├── modules
