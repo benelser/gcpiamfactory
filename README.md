@@ -12,6 +12,7 @@ SOURCE CONTROL
 ```
 
 ## Source Code Structure
+In production each bizunit<ArbitraryNumber>_repo should reference back to "businessunitiamfactory" module with version pinning. So the modules directory below should be dynamically pulled from version control. Therefore you are not duplicating that code across the env and having to make changes everywhere. Users of the "businessunitiamfactory" module can then just consume it while passing in their respective [JSON Config](./bizunit.json)
 ```
 ├── README.md
 ├── bizunit.json
