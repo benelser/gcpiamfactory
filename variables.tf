@@ -3,7 +3,12 @@ variable org_domain {
   description = "Organization domain name"
 }
 
-variable billing_account {
+variable project_id {
   type        = string
-  description = "The ID of the billing account to associate projects with."
+  description = "Project id to "
+}
+
+variable project_name {
+  type        = string
+  description = "Project id to "
 }
